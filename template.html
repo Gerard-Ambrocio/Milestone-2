@@ -1,0 +1,296 @@
+
+<?php
+
+session_start();
+if(!isset($_SESSION['username'])){
+	$_SESSION['username']="";
+	$_SESSION['role']="";
+}
+
+?>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- stylesheet -->
+	<link rel="stylesheet" type="text/css" href="css/style-template.css">
+	
+</head>
+<body>
+		<nav class="navbar navbar-fixed-top">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span> 
+		      </button>
+		      <a href=""><span id="O">◎</span></a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      <ul class="nav navbar-nav">
+		        <li><a href="#">ConverSTN</a></li>
+		        <li><a href="#">SCHEDULE</a></li> 	       
+		        <li><a href="#">CONTACTS</a></li> 
+		      </ul>
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="#" id="account-button"><span class="glyphicon glyphicon-log-in"></span> ACCOUNT</a></li>
+		
+		        <?php
+			          if ($_SESSION['username'] == "") {
+			          	if ($_SERVER['PHP_SELF']=='/MILESTONE 1.75/login.php') {
+			          		echo "<li class='nav-item dropdown'>
+						   		<a class='nav-link dropdown-toggle' data-toggle='dropdown'
+						       	href='#' role='button' aria-haspopup='true' aria-expanded='false'>
+						      	<span class='glyphicon glyphicon-user'></span> ACCOUNT </a>
+							    <ul class='dropdown-menu'>				            
+						            <li><a href='register.php'>REGISTER</a></li>
+
+				        		</ul>
+			       			</li>";  
+			          	}else {
+			          		echo "<li class='nav-item dropdown'>
+						   		<a class='nav-link dropdown-toggle' data-toggle='dropdown'
+						       	href='#' role='button' aria-haspopup='true' aria-expanded='false'>
+						      	<span class='glyphicon glyphicon-user'></span> ACCOUNT </a>
+							    <ul class='dropdown-menu'>
+						            <li><a href='login.php'>LOGIN </a></li>				           
+				        		</ul>
+			       			</li>";  
+			          	}
+			          }else{
+			          	echo " <li class='dropdown active'>
+			         			<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false' style='display: block;'> ".$_SESSION['username']." <span class='caret'></span></a>
+						        <ul class='dropdown-menu'>
+						            <li><a href='#'>Account</a></li>
+						            <li><a href='#'>Wishlist</a></li>
+						            <li><a href='#'>Recipes</a></li>
+						            <li role='separator' class='divider'></li>
+						            <li><a href='logout.php'>Logout</a></li>
+						        </ul>
+						        </li>";
+			          }
+			       ?>    
+
+
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+
+		<section class="content">
+			<div class="container"> 
+			  <div class="row">
+			  	ConverSTN
+			  </div>  
+			  <div class="row">
+
+			    <div class="col-sm-3">
+			      <div class="panel panel-primary btn panel-warning selected-panel">  
+			        <div class="panel-heading">Arts</div>      
+			        <div class="panel-body"><img src="https://www.organicfacts.net/wp-content/uploads/2013/05/Herbs2-700x525.jpg" class="img-responsive" style="width:100%; height:250px" alt="Image"></div>
+
+			       		        	
+			      </div>
+
+			        <div class="row">
+				      <div class="col-sm-12">
+						  <div class="panel panel-primary btn panel-warning selected-panel">  
+			     		    <div class="panel-heading">Beauty</div>       
+					        <div class="panel-body"><img src="http://i.ndtvimg.com/i/2016-05/spices_650x400_51463018965.jpg" class="img-responsive" style="width:100%; height:250px" alt="Image"></div> 
+					      
+					      </div>
+				      </div>				     
+				    </div>
+
+				    <div class="row">
+				      <div class="col-sm-12">
+						  <div class="panel panel-primary btn panel-warning selected-panel">  
+			      			<div class="panel-heading">Fitness</div>      
+					        <div class="panel-body"><img src="http://i.ndtvimg.com/i/2016-05/spices_650x400_51463018965.jpg" class="img-responsive" style="width:100%; height:250px" alt="Image"></div> 
+					      
+					      </div>
+				      </div>				     
+				    </div>
+
+			    </div>
+
+			     <div class="col-sm-3">
+			      <div class="panel panel-primary btn panel-warning selected-panel">  
+			        <div class="panel-heading">Business</div>      
+			        <div class="panel-body"><img src="https://www.organicfacts.net/wp-content/uploads/2013/05/Herbs2-700x525.jpg" class="img-responsive" style="width:100%; height:250px" alt="Image"></div>
+			       		        	
+			      </div>
+
+			        <div class="row">
+				      <div class="col-sm-12">
+						  <div class="panel panel-primary btn panel-warning selected-panel">  
+			                <div class="panel-heading">Computer and Technology</div>      
+					        <div class="panel-body"><img src="http://i.ndtvimg.com/i/2016-05/spices_650x400_51463018965.jpg" class="img-responsive" style="width:100%; height:250px" alt="Image"></div> 
+					      
+					      </div>
+				      </div>				     
+				    </div>
+
+				    <div class="row">
+				      <div class="col-sm-12">
+						  <div class="panel panel-primary btn panel-warning selected-panel">  
+			                <div class="panel-heading">Food and Cuisine</div>      
+					        <div class="panel-body"><img src="http://i.ndtvimg.com/i/2016-05/spices_650x400_51463018965.jpg" class="img-responsive" style="width:100%; height:250px" alt="Image"></div> 
+					      
+					      </div>
+				      </div>				     
+				    </div>
+
+			    </div>
+
+			      <div class="col-sm-3">
+			      <div class="panel panel-primary btn panel-warning selected-panel">  
+			        <div class="panel-heading">Home and Garden</div>      
+			        <div class="panel-body"><img src="https://www.organicfacts.net/wp-content/uploads/2013/05/Herbs2-700x525.jpg" class="img-responsive" style="width:100%; height:250px" alt="Image"></div>
+			       		        	
+			      </div>
+
+			        <div class="row">
+				      <div class="col-sm-12">
+						  <div class="panel panel-primary btn panel-warning selected-panel">  
+			                <div class="panel-heading">Hobbies and Leisure</div>      
+					        <div class="panel-body"><img src="http://i.ndtvimg.com/i/2016-05/spices_650x400_51463018965.jpg" class="img-responsive" style="width:100%; height:250px" alt="Image"></div> 
+					      
+					      </div>
+				      </div>				     
+				    </div>
+
+				    <div class="row">
+				      <div class="col-sm-12">
+						  <div class="panel panel-primary btn panel-warning selected-panel">  
+			                <div class="panel-heading">Academics</div>      
+					        <div class="panel-body"><img src="http://i.ndtvimg.com/i/2016-05/spices_650x400_51463018965.jpg" class="img-responsive" style="width:100%; height:250px" alt="Image"></div> 
+					      
+					      </div>
+				      </div>				     
+				    </div>
+			    </div>
+
+			      <div class="col-sm-3">
+			      <div class="panel panel-primary btn panel-warning selected-panel">  
+			        <div class="panel-heading">Shopping</div>      
+			        <div class="panel-body"><img src="https://www.organicfacts.net/wp-content/uploads/2013/05/Herbs2-700x525.jpg" class="img-responsive" style="width:100%; height:250px" alt="Image"></div>
+			       		        	
+			      </div>
+
+			        <div class="row">
+				      <div class="col-sm-12">
+						  <div class="panel panel-primary btn panel-warning selected-panel">  
+			     		    <div class="panel-heading">Sports</div>      
+					        <div class="panel-body"><img src="http://i.ndtvimg.com/i/2016-05/spices_650x400_51463018965.jpg" class="img-responsive" style="width:100%; height:250px" alt="Image"></div> 
+					      
+					      </div>
+				      </div>				     
+				    </div>
+
+				    <div class="row">
+				      <div class="col-sm-12">
+						  <div class="panel panel-primary btn panel-warning selected-panel">  
+			                <div class="panel-heading">Travel</div>      
+					        <div class="panel-body"><img src="http://i.ndtvimg.com/i/2016-05/spices_650x400_51463018965.jpg" class="img-responsive" style="width:100%; height:250px" alt="Image"></div> 
+					      
+					      </div>
+				      </div>				     
+				    </div>
+			    </div>
+					      </div>
+				      </div>				     
+				    </div>
+			    </div>
+			  </div>
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</section>
+
+		<footer class="footer container-fluid">
+			<div class="container row">
+				<div class="col-sm-5 footer-right">
+					<form>				
+					  <div class="form-inline sub">
+					    <label for="email">SUBSCRIBE TO OUR NEWS LETTER</label>
+					    <input type="email" class="form-control" id="email">
+					  </div>
+
+					  <button type="submit" class="btn btn-danger" id="emailbtn">SUBSCRIBE</button>
+					</form>
+					<p>Copyright © ◎pen ConverSTN  Inc. all rights reserved | Design by Gerard </p>
+					
+				</div>
+
+					<div class='col-sm-5' id="center-footer">
+						<h3> Follow Us</h3>
+						
+					<div class="col-lg-4">		
+		<i class="fa fa-facebook-square" aria-hidden="true"></i>
+		<i class="fa fa-google-plus-square" aria-hidden="true"></i>
+		<i class="fa fa-pinterest-square" aria-hidden="true"></i>
+		<i class="fa fa-tumblr-square" aria-hidden="true"></i>
+		<i class="fa fa-linkedin-square" aria-hidden="true"></i>
+		</div>
+					
+					</div>
+
+
+
+		
+		
+		
+		
+					<div class="col-sm-2">
+						 <a href=""><span id="O-foot">◎</span></a>
+					</div>
+					
+			</div>
+		</footer>
+
+
+
+</body>
+</html>
