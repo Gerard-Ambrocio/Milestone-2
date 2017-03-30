@@ -106,14 +106,12 @@ function login(){
 		$password = sha1($_POST['password']);
 		$sql = "SELECT * FROM users WHERE username = '$username'
 		AND password = '$password'";
-
-
-
 		$result = mysqli_query($conn,$sql);
 		if(mysqli_num_rows($result)){
-			$_SESSION['message'] = "Login Successful";
+			extract(mysqli_fetch_assoc($result));
 			$_SESSION['username'] = $username;
-			$_SESSION['role'] = $row['role'];
+			$_SESSION['role'] = $role;
+			$_SESSION['user_id'] = $user_id;
 			header('location:index.php');				
 		}
 	}
