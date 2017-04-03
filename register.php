@@ -2,67 +2,78 @@
 
 function display_content(){
 	register();
-	echo "
-	<div class='register-box'>
-	<h1 class='register-head text-center'>NEW ACCOUNT </h1>
-		<form class='form-horizontal' method='POST' action='register.php' id='register-form'>
-    <div class='form-group'>
-      <label class='control-label' for='username'> Username:</label>
-      <div class=''>
-        <input type='text' class='form-control' id='username' name='username' required>
-      </div>
-    </div>
-    <div class='form-group'>
-      <label class='control-label' for='password'>Password:</label>
-      <div class=''>          
-        <input type='password' class='form-control' id='password' name='password' required>
-      </div>
-    </div>
+  	echo "
+     <h1 class='register-head text-center row' >NEW ACCOUNT </h1>   
+  	<div class='row'>
+
+      
+     <div class='col-sm-10'>  
+  		<form class='form-horizontal' method='POST' action='register.php' id='register-form'>
+
       <div class='form-group'>
-      <label class='control-label' for='pw2'> Confirm Password:</label>
-      <div class=''>          
-        <input type='password' class='form-control' id='pw2' name='pw2' required>
+        <label class='control-label' for='username'> Username:</label>
+        <div class=''>
+          <input type='text' class='form-control' id='username' name='username' required>
+        </div>
       </div>
-    </div> 
-    </div>
+
       <div class='form-group'>
-      <label class='control-label' for='firstname'> First Name:</label>
-      <div class=''>          
-        <input type='text' class='form-control' id='firstname' name='firstname' required>
+        <label class='control-label' for='password'>Password:</label>
+        <div class=''>          
+          <input type='password' class='form-control' id='password' name='password' required>
+        </div>
       </div>
-    </div>  
-    </div>
+
       <div class='form-group'>
-      <label class='control-label' for='lastname'> Last Name:</label>
-      <div class=''>          
-        <input type='text' class='form-control' id='lastname' name='lastname' required>
-      </div>
-    </div>   
-    </div>
-      <div class='form-group'>
-      <label class='control-label' for='email'> Email:</label>
-      <div class=''>          
-        <input type='email' class='form-control' id='email' name='email' required>
-      </div>
-    </div>      
-     </div>
-      <div class='form-group'>
-      <label class='control-label' for='image'> Profile picture:</label>
-      <div class=''>          
-        <input type='text' class='form-control' id='image' name='image' required>
-      </div>
-    </div>      
+        <label class='control-label' for='pw2'> Confirm Password:</label>
+        <div class=''>          
+          <input type='password' class='form-control' id='pw2' name='pw2' required>
+        </div>
+      </div> 
+   
 
 
-    <div class='form-group'>        
-      <div class='col-sm-offset-2 col-sm-10'>
-        <button type='submit' name='register' value='register' class='btn btn-md btn-primary'>CREATE ACCOUNT</button>
-      <div>
+
+    
+
+      <div class='form-group'>
+        <label class='control-label' for='firstname'> First Name:</label>
+        <div class=''>          
+          <input type='text' class='form-control' id='firstname' name='firstname' required>
+        </div>
+      </div> 
+
+
+      
+      <div class='form-group'>
+        <label class='control-label' for='lastname'> Last Name:</label>
+        <div class=''>          
+          <input type='text' class='form-control' id='lastname' name='lastname' required>
+        </div>
+      </div>
+
+
+     
+      <div class='form-group'>
+        <label class='control-label' for='email'> Email:</label>
+        <div class=''>          
+          <input type='email' class='form-control' id='email' name='email' required>
+        </div>
+    
+
+     </div>  
+
+      <div class='form-group'>        
+        <div>
+          <button type='submit' name='register' value='register' class='btn btn-md btn-primary'>CREATE ACCOUNT</button>
+        <div>        
+      </div>
+
     </div>
-  </form>
-  </div>
-  </div>
-	";
+
+    </form>
+    
+  	";
 }
 
 

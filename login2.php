@@ -1,13 +1,21 @@
 
+<!-- // 	$users = [
+// 		['username'=>'gerard','password'=>'password'],
+// 		['username'=>'test','password'=>'password'],
+// 		['username'=>'newuser','password'=>'12345']
+// 		];
 
+// $fp = fopen('users.json', 'w');
+// fwrite($fp, json_encode($users, JSON_PRETTY_PRINT));
+// fclose($fp);
+
+ -->
 
 
 <?php
 
 function display_content(){
-
-	echo " <div class='login'>		
-			<div class='row text-center login-page'>
+	echo "<div class='row text-center login-page'>
 				<h1 class='login-head'>LOGIN</h1>
 			</div>
 			<div class='row' id='display'>
@@ -17,7 +25,6 @@ function display_content(){
 				<div class='col-xs-12 col-sm-6'>";
 				   display_content2();
 			echo "</div>
-			</div>
 			</div>";
 }
 
@@ -58,17 +65,16 @@ function display_content2(){
 
 
 		<div class='col-lg-12 new-customer'>
-			<h3 class='customer-head'>New Subscriber?</h3>
+			<h3 class='customer-head'>New Customer?</h3>
 			<p>Create an account with us and you'll be able to:</p>
 			<ul>
-				<li>Book your own Talks</li>
-				<li>Find your spots</li>
+				<li>Check out faster</li>
+				<li>Save multiple shipping addresses</li>
 				<li>Access your order history</li>
-				<li>Make your own Talks</li>
-				<li>Start having the Converstation lifestyle!</li>
+				<li>Track new orders</li>
+				<li>Save items to your wish list</li>
 			</ul>
 		</div>
-
 		<div class='col-lg-offset-1 col-lg-10' id='create'>
 	        <a type='btn' name='register' value='register' class='btn btn-md btn-primary' href='register.php'>CREATE ACCOUNT</a>
 	        

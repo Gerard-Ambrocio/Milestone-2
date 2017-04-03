@@ -13,26 +13,30 @@ function display_content(){
 	
 		categories();
 		echo "
-			<div class='container'>
-  <h2>Dynamic Pills</h2>
-
-  <ul class='nav nav-pills'>
-    <li class='active'><a data-toggle='pill' href='#all'>All</a></li>
-    <li><a data-toggle='pill' href='#arts'>Arts and Music</a></li>
-    <li><a data-toggle='pill' href='#beauty'>Beauty and Fashion</a></li>
-    <li><a data-toggle='pill' href='#fitness'>Fitness and Sports</a></li>
-    <li><a data-toggle='pill' href='#business'>Business</a></li>
-    <li><a data-toggle='pill' href='#computer'>Computer and Technology</a></li>
-    <li><a data-toggle='pill' href='#food'>Food and Cuisine</a></li>
-    <li><a data-toggle='pill' href='#home'>Home and Garden</a></li>
-    <li><a data-toggle='pill' href='#hobbies'>Hobbies and Leisure</a></li>
-    <li><a data-toggle='pill' href='#academics'>Academics</a></li>
-    <li><a data-toggle='pill' href='#travel'>Travel and Exploration</a></li>
-  </ul>
+			<div class='row'>
   
-  <div class='tab-content'>
+  <div class='pills col-md-2 col-md-offset-1'>
+  	 <h2>Converstations</h2>
+  	 <div>	
+	  <ul class='nav nav-pills nav-stacked'>
+	    <li class='active'><a data-toggle='pill' href='#all'>All</a></li>
+	    <li><a data-toggle='pill' href='#arts'>Arts and Music</a></li>
+	    <li><a data-toggle='pill' href='#beauty'>Beauty and Fashion</a></li>
+	    <li><a data-toggle='pill' href='#fitness'>Fitness and Sports</a></li>
+	    <li><a data-toggle='pill' href='#business'>Business</a></li>
+	    <li><a data-toggle='pill' href='#computer'>Computer and Technology</a></li>
+	    <li><a data-toggle='pill' href='#food'>Food and Cuisine</a></li>
+	    <li><a data-toggle='pill' href='#home'>Home and Garden</a></li>
+	    <li><a data-toggle='pill' href='#hobbies'>Hobbies and Leisure</a></li>
+	    <li><a data-toggle='pill' href='#academics'>Academics</a></li>
+	    <li><a data-toggle='pill' href='#travel'>Travel and Exploration</a></li>
+	  </ul>
+	 </div> 
+  </div>
+  
+  <div class='tab-content col-md-8 col-md-offset-1'>
     <div id='all' class='tab-pane fade in active'>
-      <h3>All</h3>";
+      ";
  		display_all();
     echo "</div>
     <div id='arts' class='tab-pane fade'>";
@@ -93,8 +97,7 @@ function categories(){
 		{
 
 				echo "<div class='phparray col-md-offset-1 col-md-2';>
-					<img src='$image'>
-					<div><h4><strong>$username</strong></h4></div> 
+					<h3>$first_name $last_name</h3>
 					<div>$topic</div><hr>
 					<div><h5>₱<strong>$price</strong></h5></div>
 					<div>$description</div><hr>
@@ -111,10 +114,9 @@ function categories(){
 
 					if(isset($_SESSION['role']) && $_SESSION['role']=='admin'){
 
-					echo "   <form class='form-horizontal' method='GET' action='#.php'>		
-								<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Edit</button>
-							</form>"; 
+					echo "  <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Edit</button>"; 
 
+					echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
 							
 
 
@@ -176,10 +178,6 @@ function categories(){
 							    </div>
 							  </div>
 							  </div>";
-
-						
-
-						echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
 
 					}
 				echo "</div>";
@@ -205,9 +203,11 @@ function categories(){
 
 			if($category=='arts'){
 
-				echo "<div class='phparray col-md-offset-1 col-md-2';>
-					<img src='$image'>
-					<div><h4><strong>$username</strong></h4></div> 
+				echo "
+
+
+				<div class='phparray col-md-offset-1 col-md-2';>
+					<h3>$first_name $last_name</h3>
 					<div>$topic</div><hr>
 					<div><h5>₱<strong>$price</strong></h5></div>
 					<div>$description</div><hr>
@@ -215,20 +215,19 @@ function categories(){
 					<div>$location</div><hr>
 
 
-					<form class='form-horizontal' method='POST' action='#.php'>
-					 	<button type='submit' name='book' value='book' class='btn btn-primary'>Book</button>
-					</form>
-						
+					  <a href='booking.php?id=$id'><button type='submit' name='book' value='book' class='btn btn-primary'>Book</button></a>
+					
 
 					";
 
 
 					if(isset($_SESSION['role']) && $_SESSION['role']=='admin'){
 
-					echo "   <form class='form-horizontal' method='GET' action='#.php'>		
+					echo "   
 								<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Edit</button>
-							</form>"; 
+							"; 
 
+							echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
 							
 
 
@@ -293,7 +292,7 @@ function categories(){
 
 						
 
-						echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
+						
 
 					}
 				echo "</div>";
@@ -313,8 +312,7 @@ function categories(){
 			if($category=='beauty'){
 
 				echo "<div class='phparray col-md-offset-1 col-md-2';>
-					<img src='$image'>
-					<div><h4><strong>$username</strong></h4></div> 
+					<h3>$first_name $last_name</h3>
 					<div>$topic</div><hr>
 					<div><h5>₱<strong>$price</strong></h5></div>
 					<div>$description</div><hr>
@@ -322,9 +320,8 @@ function categories(){
 					<div>$location</div><hr>
 
 
-					<form class='form-horizontal' method='POST' action='#.php'>
-					 	<button type='submit' name='book' value='book' class='btn btn-primary'>Book</button>
-					</form>
+					
+					 	 <a href='booking.php?id=$id'><button type='submit' name='book' value='book' class='btn btn-primary'>Book</button></a>
 						
 
 					";
@@ -332,11 +329,11 @@ function categories(){
 
 					if(isset($_SESSION['role']) && $_SESSION['role']=='admin'){
 
-					echo "   <form class='form-horizontal' method='GET' action='#.php'>		
+					echo "   
 								<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Edit</button>
-							</form>"; 
+							"; 
 
-							
+							echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
 
 
 
@@ -400,7 +397,7 @@ function categories(){
 
 						
 
-						echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
+						
 
 					}
 				echo "</div>";
@@ -421,8 +418,7 @@ function categories(){
 			if($category=='fitness'){
 
 				echo "<div class='phparray col-md-offset-1 col-md-2';>
-					<img src='$image'>
-					<div><h4><strong>$username</strong></h4></div> 
+					<h3>$first_name $last_name</h3>
 					<div>$topic</div><hr>
 					<div><h5>₱<strong>$price</strong></h5></div>
 					<div>$description</div><hr>
@@ -430,9 +426,8 @@ function categories(){
 					<div>$location</div><hr>
 
 
-					<form class='form-horizontal' method='POST' action='#.php'>
-					 	<button type='submit' name='book' value='book' class='btn btn-primary'>Book</button>
-					</form>
+					
+					 	 <a href='booking.php?id=$id'><button type='submit' name='book' value='book' class='btn btn-primary'>Book</button></a>
 						
 
 					";
@@ -440,11 +435,11 @@ function categories(){
 
 					if(isset($_SESSION['role']) && $_SESSION['role']=='admin'){
 
-					echo "   <form class='form-horizontal' method='GET' action='#.php'>		
+					echo "   
 								<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Edit</button>
-							</form>"; 
+							"; 
 
-							
+							echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
 
 
 
@@ -508,7 +503,7 @@ function categories(){
 
 						
 
-						echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
+						
 
 					}
 				echo "</div>";
@@ -528,8 +523,7 @@ function categories(){
 			if($category=='business'){
 
 				echo "<div class='phparray col-md-offset-1 col-md-2';>
-					<img src='$image'>
-					<div><h4><strong>$username</strong></h4></div> 
+					<h3>$first_name $last_name</h3>
 					<div>$topic</div><hr>
 					<div><h5>₱<strong>$price</strong></h5></div>
 					<div>$description</div><hr>
@@ -537,9 +531,8 @@ function categories(){
 					<div>$location</div><hr>
 
 
-					<form class='form-horizontal' method='POST' action='#.php'>
-					 	<button type='submit' name='book' value='book' class='btn btn-primary'>Book</button>
-					</form>
+					
+					 	 <a href='booking.php?id=$id'><button type='submit' name='book' value='book' class='btn btn-primary'>Book</button></a>
 						
 
 					";
@@ -547,11 +540,11 @@ function categories(){
 
 					if(isset($_SESSION['role']) && $_SESSION['role']=='admin'){
 
-					echo "   <form class='form-horizontal' method='GET' action='#.php'>		
+					echo "   
 								<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Edit</button>
-							</form>"; 
+							"; 
 
-							
+							echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
 
 
 
@@ -615,7 +608,7 @@ function categories(){
 
 						
 
-						echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
+						
 
 					}
 				echo "</div>";
@@ -635,8 +628,7 @@ function categories(){
 			if($category=='computer'){
 
 				echo "<div class='phparray col-md-offset-1 col-md-2';>
-					<img src='$image'>
-					<div><h4><strong>$username</strong></h4></div> 
+					<h3>$first_name $last_name</h3>
 					<div>$topic</div><hr>
 					<div><h5>₱<strong>$price</strong></h5></div>
 					<div>$description</div><hr>
@@ -644,9 +636,8 @@ function categories(){
 					<div>$location</div><hr>
 
 
-					<form class='form-horizontal' method='POST' action='#.php'>
-					 	<button type='submit' name='book' value='book' class='btn btn-primary'>Book</button>
-					</form>
+					
+					 	 <a href='booking.php?id=$id'><button type='submit' name='book' value='book' class='btn btn-primary'>Book</button></a>
 						
 
 					";
@@ -654,11 +645,13 @@ function categories(){
 
 					if(isset($_SESSION['role']) && $_SESSION['role']=='admin'){
 
-					echo "   <form class='form-horizontal' method='GET' action='#.php'>		
+					echo "   
 								<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Edit</button>
-							</form>"; 
+							"; 
 
 							
+						echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
+
 
 
 
@@ -721,8 +714,6 @@ function categories(){
 							  </div>";
 
 						
-
-						echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
 
 					}
 				echo "</div>";
@@ -742,8 +733,7 @@ function categories(){
 			if($category=='food'){
 
 				echo "<div class='phparray col-md-offset-1 col-md-2';>
-					<img src='$image'>
-					<div><h4><strong>$username</strong></h4></div> 
+					<h3>$first_name $last_name</h3>
 					<div>$topic</div><hr>
 					<div><h5>₱<strong>$price</strong></h5></div>
 					<div>$description</div><hr>
@@ -751,9 +741,8 @@ function categories(){
 					<div>$location</div><hr>
 
 
-					<form class='form-horizontal' method='POST' action='#.php'>
-					 	<button type='submit' name='book' value='book' class='btn btn-primary'>Book</button>
-					</form>
+					
+					 	 <a href='booking.php?id=$id'><button type='submit' name='book' value='book' class='btn btn-primary'>Book</button></a>
 						
 
 					";
@@ -761,11 +750,11 @@ function categories(){
 
 					if(isset($_SESSION['role']) && $_SESSION['role']=='admin'){
 
-					echo "   <form class='form-horizontal' method='GET' action='#.php'>		
+					echo "   
 								<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Edit</button>
-							</form>"; 
+							"; 
 
-							
+							echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";	
 
 
 
@@ -829,7 +818,7 @@ function categories(){
 
 						
 
-						echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
+						
 
 					}
 				echo "</div>";
@@ -849,8 +838,7 @@ function categories(){
 			if($category=='home'){
 
 				echo "<div class='phparray col-md-offset-1 col-md-2';>
-					<img src='$image'>
-					<div><h4><strong>$username</strong></h4></div> 
+					<h3>$first_name $last_name</h3>
 					<div>$topic</div><hr>
 					<div><h5>₱<strong>$price</strong></h5></div>
 					<div>$description</div><hr>
@@ -858,9 +846,8 @@ function categories(){
 					<div>$location</div><hr>
 
 
-					<form class='form-horizontal' method='POST' action='#.php'>
-					 	<button type='submit' name='book' value='book' class='btn btn-primary'>Book</button>
-					</form>
+					
+					 	 <a href='booking.php?id=$id'><button type='submit' name='book' value='book' class='btn btn-primary'>Book</button></a>
 						
 
 					";
@@ -868,12 +855,13 @@ function categories(){
 
 					if(isset($_SESSION['role']) && $_SESSION['role']=='admin'){
 
-					echo "   <form class='form-horizontal' method='GET' action='#.php'>		
+					echo "   
 								<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Edit</button>
-							</form>"; 
+							"; 
 
 							
 
+						echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
 
 
 
@@ -936,7 +924,6 @@ function categories(){
 
 						
 
-						echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
 
 					}
 				echo "</div>";
@@ -956,8 +943,7 @@ function categories(){
 			if($category=='hobbies'){
 
 				echo "<div class='phparray col-md-offset-1 col-md-2';>
-					<img src='$image'>
-					<div><h4><strong>$username</strong></h4></div> 
+					<h3>$first_name $last_name</h3>
 					<div>$topic</div><hr>
 					<div><h5>₱<strong>$price</strong></h5></div>
 					<div>$description</div><hr>
@@ -965,9 +951,8 @@ function categories(){
 					<div>$location</div><hr>
 
 
-					<form class='form-horizontal' method='POST' action='#.php'>
-					 	<button type='submit' name='book' value='book' class='btn btn-primary'>Book</button>
-					</form>
+					
+					 	 <a href='booking.php?id=$id'><button type='submit' name='book' value='book' class='btn btn-primary'>Book</button></a>
 						
 
 					";
@@ -975,11 +960,12 @@ function categories(){
 
 					if(isset($_SESSION['role']) && $_SESSION['role']=='admin'){
 
-					echo "   <form class='form-horizontal' method='GET' action='#.php'>		
+					echo "   
 								<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Edit</button>
-							</form>"; 
+							"; 
 
 							
+						echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
 
 
 
@@ -1043,7 +1029,6 @@ function categories(){
 
 						
 
-						echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
 
 					}
 				echo "</div>";
@@ -1063,8 +1048,7 @@ function categories(){
 			if($category=='academics'){
 
 				echo "<div class='phparray col-md-offset-1 col-md-2';>
-					<img src='$image'>
-					<div><h4><strong>$username</strong></h4></div> 
+					<h3>$first_name $last_name</h3>
 					<div>$topic</div><hr>
 					<div><h5>₱<strong>$price</strong></h5></div>
 					<div>$description</div><hr>
@@ -1072,9 +1056,8 @@ function categories(){
 					<div>$location</div><hr>
 
 
-					<form class='form-horizontal' method='POST' action='#.php'>
-					 	<button type='submit' name='book' value='book' class='btn btn-primary'>Book</button>
-					</form>
+					
+					 	 <a href='booking.php?id=$id'><button type='submit' name='book' value='book' class='btn btn-primary'>Book</button></a>
 						
 
 					";
@@ -1082,12 +1065,13 @@ function categories(){
 
 					if(isset($_SESSION['role']) && $_SESSION['role']=='admin'){
 
-					echo "   <form class='form-horizontal' method='GET' action='#.php'>		
+					echo "   
 								<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Edit</button>
-							</form>"; 
+							"; 
 
 							
 
+								echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
 
 
 
@@ -1150,8 +1134,7 @@ function categories(){
 
 						
 
-						echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
-
+					
 					}
 				echo "</div>";
 
@@ -1170,8 +1153,7 @@ include('connection.php');
 			if($category=='travel'){
 
 				echo "<div class='phparray col-md-offset-1 col-md-2';>
-					<img src='$image'>
-					<div><h4><strong>$username</strong></h4></div> 
+					<h3>$first_name $last_name</h3>
 					<div>$topic</div><hr>
 					<div><h5>₱<strong>$price</strong></h5></div>
 					<div>$description</div><hr>
@@ -1179,9 +1161,8 @@ include('connection.php');
 					<div>$location</div><hr>
 
 
-					<form class='form-horizontal' method='POST' action='#.php'>
-					 	<button type='submit' name='book' value='book' class='btn btn-primary'>Book</button>
-					</form>
+					
+					 	 <a href='booking.php?id=$id'><button type='submit' name='book' value='book' class='btn btn-primary'>Book</button></a>
 						
 
 					";
@@ -1189,11 +1170,12 @@ include('connection.php');
 
 					if(isset($_SESSION['role']) && $_SESSION['role']=='admin'){
 
-					echo "   <form class='form-horizontal' method='GET' action='#.php'>		
+					echo "   
 								<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Edit</button>
-							</form>"; 
+							"; 
 
 							
+						echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
 
 
 
@@ -1206,7 +1188,7 @@ include('connection.php');
 							    <div class='modal-content'>
 							      <div class='modal-header'>
 							        <button type='button' class='close' data-dismiss='modal'>&times;</button>
-							        <h4 class='Add Talk'>Modal Header</h4>
+							        <h4 class='Add Talk'>Edit</h4>
 							      </div>
 							      <div class='modal-body'>
 							      	<form class='form-horizontal' method='POST'>
@@ -1257,7 +1239,6 @@ include('connection.php');
 
 						
 
-						echo "<a href='delete.php?id=$id'><input type='button' name='delete' value='Delete' class='btn btn-primary'></input></a>";
 
 					}
 				echo "</div>";

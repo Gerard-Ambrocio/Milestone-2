@@ -48,10 +48,9 @@ if(!isset($_SESSION['username'])){
 		    </div>
 		    <div class="collapse navbar-collapse" id="myNavbar">
 		      <ul class="nav navbar-nav">
-		    	<li><a href="#"><strong>ABOUT</strong></a></li>
+		    	
 		        <li><a href="categories.php">ConverSTN</a></li>
-		        <li><a href="#">SCHEDULE</a></li> 	       
-		        <li><a href="#">CONTACTS</a></li> 
+		     
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
 		      
@@ -88,6 +87,7 @@ if(!isset($_SESSION['username'])){
 						        </ul>
 						        </li>";
 			          }
+			          
 			       ?>     
 
 		      </ul>
@@ -108,29 +108,30 @@ if(!isset($_SESSION['username'])){
 		</section>
 
 		<footer class="footer container-fluid">
-			<div class="container row">
-				<div class="col-sm-5 footer-right">
-					<form>				
+			<div class=" row">
+				<div class="col-sm-5 col-sm-offset-1 footer-right">
+					
 					  <div class="form-inline sub">
 					    <label for="email">SUBSCRIBE TO OUR NEWS LETTER</label>
 					    <input type="email" class="form-control" id="email">
+					    <button type="submit" class="btn btn-primary" id="emailbtn">SUBSCRIBE</button>
 					  </div>
 
-					  <button type="submit" class="btn btn-primary" id="emailbtn">SUBSCRIBE</button>
-					</form>
+					  
+					
 					<p>Copyright © ◎pen ConverSTN  Inc. all rights reserved | Design by Gerard </p>
 					
 				</div>
 
-					<div class='col-sm-5' id="center-footer">
-						<h3> Follow Us</h3>
+					<div class='col-sm-4' id="center-footer">
+						<label> FOLLOW US</label>
 						
-					<div class="col-lg-4">		
-		<i class="fa fa-facebook-square" aria-hidden="true"></i>
-		<i class="fa fa-google-plus-square" aria-hidden="true"></i>
-		<i class="fa fa-pinterest-square" aria-hidden="true"></i>
-		<i class="fa fa-tumblr-square" aria-hidden="true"></i>
-		<i class="fa fa-linkedin-square" aria-hidden="true"></i>
+					<div class="col-lg-4 media">		
+		<i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
+		<i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>
+		<i class="fa fa-pinterest-square fa-3x" aria-hidden="true"></i>
+		<i class="fa fa-tumblr-square fa-3x" aria-hidden="true"></i>
+		<i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
 		</div>
 					
 					</div>
@@ -141,7 +142,7 @@ if(!isset($_SESSION['username'])){
 		
 		
 		
-					<div class="col-sm-2">
+					<div class="col-sm-1">
 						 <a href=""><span id="O-foot">◎</span></a>
 					</div>
 					

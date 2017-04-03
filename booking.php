@@ -16,7 +16,7 @@
 		if($user_id != $user_id_session){
 
 				$query = "SELECT * FROM bookings WHERE user_id = '$user_id_session' AND speaker_categories_id = '$id'";
-				$r = mysqli_query($conn,$sql);
+				$r = mysqli_query($conn,$query);
 				if(mysqli_num_rows($r)){
 					$_SESSION['message'] = "Already booked";
 				} else {

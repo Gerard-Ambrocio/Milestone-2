@@ -6,11 +6,10 @@ section, footer{
 	
 }
 
-/*.btn{
-	border-radius: 0;
-	background-color: #da2128;
+.btn{
+	margin: 0 5px 5px 5px;
 }
-*/
+
 
 
 
@@ -21,8 +20,9 @@ section, footer{
 	margin-bottom: 4px;
 	
 	background-color: white;
-	box-shadow: 1px 1px 3px 2px #618183;
+	/*box-shadow: 1px 1px 3px 2px #618183;*/
 	border-radius: 0;
+	border-bottom: 1px solid #EBEBEB;
 	
 
 }
@@ -43,10 +43,10 @@ section, footer{
 	font-weight: bold;
 }
 
-#falsenav{
+/*#falsenav{
 	height: 107px;
 }
-
+*/
 .navbar-collapse{
 	background-color: white;
 }
@@ -83,18 +83,13 @@ nav li {
 /*login css*/
 
 
-#display > div {
-	/*border: 1px solid black;*/
-	height: 100%;
-}
-
-.login-page{
-	color:black;
+.login{
+	padding-bottom: 50px;
 }
 
 .form-horizontal {
 	margin-top: 60px;
-	margin-left: 30%;
+	margin-left: 250px;
 }
 
 .form-control {
@@ -148,137 +143,71 @@ nav li {
 	font-weight: bolder;
 	margin-bottom:-25px;
 	color:#2d2d2d;
+
 }
 
 
-#register-form{
-	padding-left: 30px;
-}
-
-.guarantee > div {
-	display: inline;
-	color: #f4511e;
-}
 
 /*content area*/
 
 .content{
 	
-	background-image: linear-gradient(180deg, rgba(255,255,255,0) 60%, #fff),linear-gradient(70deg, #EBEBEB 32%, #EBEBEB);
-	position: relative;
+	
 	padding-top: 120px;
 }
-/*SELL - IMAGES*/
+
+
+/*CATEGORIES - PILLS*/
+
+.tab-content {
+	margin-top: 50px;
 	
-#sell {
-	background: white;
-	height: 100vh;
-	margin-top: 10%;
+	margin-bottom: 50px;
 }
 
-.panel {
-	/*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
-	border-color: transparent;
+.tab-pane{
+	text-align: center;
 }
 
-.col-sm-3{
-	padding: 0;
+
+.modal-body form{
+	margin: 0 auto;
+
+}
+
+.modal-body label{
+	margin: 0;
+	
+}
+
+.modal-body input{
+	margin: 0 auto;
+}
+.modal-body button{
 	margin: 0;
 }
 
-.panel{
-	margin: 0;
+th, td{
+	text-align: center;
 }
 
-.panel-body {
-	padding: 0;
-	margin: 0;
+.glyphicon{
+	color:#EEBC1D;
 }
-
-.panel > .btn{
-	color: #dfdfdf;
-	font-size: 20px;
-	height: 50px;
-}
-
-.panel > .btn:hover{
-	background-color: transparent;
-	color:#da2128;
-	border-color:#b31010;
-}
-
-.panel > .btn1 {
-	position: absolute;
-	top: 30%;
-	left: 40%;
-	background-color: rgba(0,0,0,0.7);
-}
-
-.panel > .btn2 {
-	position: absolute;
-	
-	top: 70%;
-	left: 10%;
-	background-color: rgba(0,0,0,0.7);
-}
-
-.panel > .btn3 {
-	position: absolute;
-	
-	top: 50%;
-	left: 25%;
-	background-color: rgba(0,0,0,0.7);
-	height:100px;
-}
-
-.panel > .btn4 {
-	position: absolute;
-	
-	top: 30%;
-	left: 10%;
-	background-color: rgba(0,0,0,0.7);
-}
-
-.panel > .btn5 {
-	position: absolute;
-	
-	top: 70%;
-	left: 30%;
-	background-color: rgba(0,0,0,0.7);
-}
-
-
-.selected-panel:active{
-	background: #F7971E; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #F7971E , #FFD200); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #F7971E , #FFD200); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        
-}
-
-
-
-
-
-
-
-
 
 
 
 /*FOOTER*/
 .footer {
-/*background: #2BC0E4;
-background: -webkit-linear-gradient(to right, #2BC0E4 , #EAECC6); 
-background: linear-gradient(to right, #2BC0E4 , #EAECC6); */
 
 
-		background: #E0EAFC; 
-background: -webkit-linear-gradient(to left, #E0EAFC , #CFDEF3); 
-background: linear-gradient(to left, #E0EAFC , #CFDEF3); 
+	background: #E0EAFC; 
+ 	background: -webkit-linear-gradient(to left, #E0EAFC , #CFDEF3); 
+	background: linear-gradient(to left, #E0EAFC , #CFDEF3); 
 	border-top: 1px solid grey;
 	font-size: 20px;
 	height: 100%;
-	
+	font-weight: 
 
 	
 	
@@ -292,76 +221,35 @@ background: linear-gradient(to left, #E0EAFC , #CFDEF3);
 }
 
 
-.footer label{
-	
-}
-
-.footer i {
-	width: 30px;
-	margin:0 5px 0 5px;
-
-}
-
-.footer ul {
-	/*margin-left: 60px;*/
-	list-style-type: none;
-}
-
 .footer ul > li {
 	display: inline;
 	margin-top: 10px;
 }
 
-.footer div:first-child {
-	
-	display: inline;
-	
+.footer i {
+	height: 10px;
 }
 
-.footer-right {
-	padding-left: 70px;
-
+.media {
+	width: 100%;
 }
 
-.footer-right  label {
-	width: 500px;
-}
-
-.footer-right  p {
-	text-align: center;
-	margin-left: -25px;
-	padding-top: 20px;
-	font-size: 14px;
-}
-
-#email {
+#email{
 	width: 300px;
 }
 
-#emailbtn {
-	height: 44px;
-	margin-top: -19px;
+.footer-right{
+	padding: 20px;
+
+}
+
+.footer-right p {
+	margin-top: 30px;
+	font-size: 12px;
 }
 
 #center-footer{
-	margin-top: -30px;
-	padding-left: 50px;
-}
-
-#center-footer li{
-	margin-left: -20px;
-}
-
-#center-footer h3{
-	padding-left: 50px;
-
-	font-weight: bold;
-}
-
-#center-footer a{
-	padding-left: 50px;
-	color:#4f4f4f;
-	font-size: 16px;
+	margin-top: 20px;
 
 }
 

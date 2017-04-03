@@ -5,20 +5,24 @@
 function display_content(){
 	// categories();
 		echo "
-<div class='container'>
+<div class='container '>
   <h2>Your Talks</h2>
-    <form class='form-horizontal' method='POST' action='#.php'>
+   
 		<!-- Trigger the modal with a button -->
-		<button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Add Talk</button>
-	</form>
-	<div id='myModal' class='modal fade' role='dialog'>
+		<button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'>Add Talk</button>";
+		if(isset($_SESSION['role']) && $_SESSION['role']=='admin'){
+
+		echo "  <a href='orange.php'><button type='button' class='btn btn-warning btn-lg'>Orange</button></a>"; 
+		}
+	
+	echo "<div id='myModal' class='modal fade' role='dialog'>
   <div class='modal-dialog'>      
 
   <!-- Modal content-->
     <div class='modal-content'>
       <div class='modal-header'>
         <button type='button' class='close' data-dismiss='modal'>&times;</button>
-        <h4 class='Add Talk'>Modal Header</h4>
+        <h4 class='Add Talk'>Edit</h4>
       </div>
       <div class='modal-body'>";
       	display_content1();
@@ -30,7 +34,8 @@ function display_content(){
   </div>
 
 
-	</div>       
+	</div>   
+	<div class='table-responsive'>    
 	  <table class='table'>
 	    <thead>
 	      <tr>
@@ -59,9 +64,9 @@ function display_content(){
 		        <td>$location</td>
 		        <td>$slots</td>
 		        <td>
-			        <form class='form-horizontal' method='GET' action='#.php'>		
+			       	
 						<button type='button' class='btn btn-primary btn-sm' data-toggle='modal' data-target='#myModal$id'>Edit</button>
-					</form>
+				
 					<div id='myModal$id' class='modal fade' role='dialog'>
 							  <div class='modal-dialog'>      
 
@@ -130,10 +135,12 @@ function display_content(){
 
 	    echo "</tbody>
 	  </table>
+	 </div> 
 	</div>
 	<div class='container'>
-	  <h2>Your Bookings</h2>             
-	  <table class='table'>
+	  <h2>Your Bookings</h2> 
+	  <div class='table-responsive'>            
+	  <table class='table '>
 	    <thead>
 	      <tr>
 	        <th>Speaker</th>
@@ -142,7 +149,7 @@ function display_content(){
 	        <th>Price</th>
 	        <th>Date</th>
 	        <th>Location</th>
-	        <th>Status</th>
+	        
 	      </tr>
 
 	    </thead>
@@ -166,6 +173,7 @@ function display_content(){
 	      }     
 	    echo "</tbody>
 	  </table>
+	 </div> 
 	</div>
 
 
